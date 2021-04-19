@@ -27,7 +27,7 @@ index 0000000..d8c9280
 +0
 diff --git a/node_modules/bs-enzyme/lib/bs/.bsdeps b/node_modules/bs-enzyme/lib/bs/.bsdeps
 new file mode 100644
-index 0000000..25c96f6
+index 0000000..0bd43bb
 --- /dev/null
 +++ b/node_modules/bs-enzyme/lib/bs/.bsdeps
 @@ -0,0 +1,5 @@
@@ -35,27 +35,27 @@ index 0000000..25c96f6
 +/Users/mando/Github/reversi/node_modules/bs-enzyme
 +1
 +bsconfig.json	0x1.81f5b44ca7efap+30
-+src	0x1.81f5b5723af71p+30
++src	0x1.81f5fc44638d5p+30
 diff --git a/node_modules/bs-enzyme/lib/bs/.compiler.log b/node_modules/bs-enzyme/lib/bs/.compiler.log
 new file mode 100644
-index 0000000..0978319
+index 0000000..3dd5c2a
 --- /dev/null
 +++ b/node_modules/bs-enzyme/lib/bs/.compiler.log
 @@ -0,0 +1,2 @@
-+#Start(1618832733655)
-+#Done(1618832733744)
++#Start(1618837266199)
++#Done(1618837266288)
 diff --git a/node_modules/bs-enzyme/lib/bs/.ninja_log b/node_modules/bs-enzyme/lib/bs/.ninja_log
 new file mode 100644
-index 0000000..e3dfea9
+index 0000000..4878ffb
 --- /dev/null
 +++ b/node_modules/bs-enzyme/lib/bs/.ninja_log
 @@ -0,0 +1,6 @@
 +# ninja log v6
-+0	43	1618832733697739167	src/Enzyme.ast	211cf0d56435d5ea
-+43	56	1618832733710915730	src/Enzyme.d	11e4f82936a274bd
-+56	89	1618832733743430616	src/Enzyme.cmj	c2a58233dfc9a669
-+56	89	1618832733743430616	src/Enzyme.cmi	c2a58233dfc9a669
-+56	89	1618832733743430616	../../src/Enzyme.bs.js	c2a58233dfc9a669
++0	44	1618837266242378646	src/Enzyme.ast	211cf0d56435d5ea
++44	56	1618837266255255439	src/Enzyme.d	11e4f82936a274bd
++56	89	1618837266287287317	src/Enzyme.cmj	a1f035e9d030eaf5
++56	89	1618837266287287317	src/Enzyme.cmi	a1f035e9d030eaf5
++56	89	1618837266287287317	../../src/Enzyme.bs.js	a1f035e9d030eaf5
 diff --git a/node_modules/bs-enzyme/lib/bs/build.ninja b/node_modules/bs-enzyme/lib/bs/build.ninja
 new file mode 100644
 index 0000000..9049da2
@@ -106,31 +106,31 @@ index 0000000..e42f8f6
 Binary files /dev/null and b/node_modules/bs-enzyme/lib/bs/src/Enzyme.cmj differ
 diff --git a/node_modules/bs-enzyme/lib/bs/src/Enzyme.cmt b/node_modules/bs-enzyme/lib/bs/src/Enzyme.cmt
 new file mode 100644
-index 0000000..fb41ec9
+index 0000000..c7c8d65
 Binary files /dev/null and b/node_modules/bs-enzyme/lib/bs/src/Enzyme.cmt differ
 diff --git a/node_modules/bs-enzyme/lib/bs/src/Enzyme.d b/node_modules/bs-enzyme/lib/bs/src/Enzyme.d
 new file mode 100644
 index 0000000..e69de29
 diff --git a/node_modules/bs-enzyme/lib/ocaml/.compiler.log b/node_modules/bs-enzyme/lib/ocaml/.compiler.log
 new file mode 100644
-index 0000000..a7db3a7
+index 0000000..8bd5fb7
 --- /dev/null
 +++ b/node_modules/bs-enzyme/lib/ocaml/.compiler.log
 @@ -0,0 +1,2 @@
-+#Start(1618832733751)
-+#Done(1618832733776)
++#Start(1618837266295)
++#Done(1618837266321)
 diff --git a/node_modules/bs-enzyme/lib/ocaml/.ninja_log b/node_modules/bs-enzyme/lib/ocaml/.ninja_log
 new file mode 100644
-index 0000000..7cf6b72
+index 0000000..7fab2f3
 --- /dev/null
 +++ b/node_modules/bs-enzyme/lib/ocaml/.ninja_log
 @@ -0,0 +1,6 @@
 +# ninja log v6
-+0	14	1618832733764756848	Enzyme.cmi	6472098ac080ef1a
-+1	14	1618832733764733057	Enzyme.cmj	6e4c83eb8507f874
-+1	14	1618832733764743515	Enzyme.re	f7e7bf4b78eb7c22
-+1	14	1618832733764789806	Enzyme.cmt	3a7b2babaf6abf72
-+14	25	1618832733776395709	install.stamp	cff5a5b4c02d30cf
++1	14	1618837266309246301	Enzyme.cmj	6e4c83eb8507f874
++1	14	1618837266309285801	Enzyme.cmt	3a7b2babaf6abf72
++1	14	1618837266309245884	Enzyme.re	f7e7bf4b78eb7c22
++0	14	1618837266309263842	Enzyme.cmi	6472098ac080ef1a
++14	26	1618837266321209599	install.stamp	cff5a5b4c02d30cf
 diff --git a/node_modules/bs-enzyme/lib/ocaml/Enzyme.cmi b/node_modules/bs-enzyme/lib/ocaml/Enzyme.cmi
 new file mode 100644
 index 0000000..1f3ff6f
@@ -141,7 +141,7 @@ index 0000000..e42f8f6
 Binary files /dev/null and b/node_modules/bs-enzyme/lib/ocaml/Enzyme.cmj differ
 diff --git a/node_modules/bs-enzyme/lib/ocaml/Enzyme.cmt b/node_modules/bs-enzyme/lib/ocaml/Enzyme.cmt
 new file mode 100644
-index 0000000..fb41ec9
+index 0000000..c7c8d65
 Binary files /dev/null and b/node_modules/bs-enzyme/lib/ocaml/Enzyme.cmt differ
 diff --git a/node_modules/bs-enzyme/lib/ocaml/Enzyme.re b/node_modules/bs-enzyme/lib/ocaml/Enzyme.re
 new file mode 100644
@@ -299,10 +299,19 @@ index 0000000..eff80ec
 +}
 +/* enzyme Not a pure module */
 diff --git a/node_modules/bs-enzyme/src/Enzyme.re b/node_modules/bs-enzyme/src/Enzyme.re
-index d351c0d..6653635 100644
+index d351c0d..a144810 100644
 --- a/node_modules/bs-enzyme/src/Enzyme.re
 +++ b/node_modules/bs-enzyme/src/Enzyme.re
-@@ -85,6 +85,7 @@ module Mount = {
+@@ -78,13 +78,14 @@ module Mount = {
+   include Renderer;
+ };
+ 
+-[@bs.module "enzyme"] external shallow : node => Shallow.t = "";
++[@bs.module "enzyme"] external shallow : node => Shallow.t = "shallow";
+ 
+-[@bs.module "enzyme"] external mount : node => Mount.t = "";
++[@bs.module "enzyme"] external mount : node => Mount.t = "mount";
+ 
  type adapter;
  
  type js_obj_with_adapter = {. "adapter": adapter};

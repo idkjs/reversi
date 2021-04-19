@@ -11,7 +11,7 @@ let matrixToCells = matrix => Array.(
 
 let (w, b, n) = (Some(Cell.White), Some(Cell.Black), None);
 
-let _ = Enzyme.configureEnzyme(react_17_adapter());
+configureEnzyme(react_17_adapter())|>ignore;
 
 describe("Board", () => {
     describe("initCells", () => {
@@ -198,12 +198,14 @@ describe("Board", () => {
         let fakeBoard = Board.init(4, 4);
 
         test("should raise an InvalidMove if cell change target is not empty", () => Cell.({
-            expect(fun () => Board.applyCellChange(fakeBoard, { x: 1, y: 1, color: Some(White) }))|> toThrow
+            expect(fun () => Board.applyCellChange(fakeBoard, { x: 1, y: 1, color: Some(White) }))
+                |> toThrow
                 // |> toThrowException(Board.InvalidMove)
         }));
 
         test("should raise an InvalidMove if cell change does not flip any cell", () => {
-            expect(() => Board.applyCellChange(fakeBoard, Cell.{ x: 0, y: 0, color: Some(White) }))|> toThrow
+            expect(() => Board.applyCellChange(fakeBoard, Cell.{ x: 0, y: 0, color: Some(White) }))
+                |> toThrow
                 // |> toThrowException(Board.InvalidMove)
         });
 
@@ -227,7 +229,7 @@ describe("Board", () => {
             let board = Board.init(4, 4);
             let wrapper = shallow(<Board board onCellClick={(_) => ()} />);
 
-            expect(wrapper |> Renderer.find("Cell") |> Renderer.length) |> toBe(16);
+            expect(wrapper |> Enzyme.Shallow.find("Cell") |> Enzyme.Shallow.length) |> toBe(16);
         });
     });
 });

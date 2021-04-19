@@ -4,7 +4,7 @@ import * as App from "../src/App.bs.js";
 import * as Game from "../src/Game.bs.js";
 import * as Jest from "@glennsl/bs-jest/src/jest.bs.js";
 import * as React from "react";
-import * as Enzyme from "bs-enzyme/src/Enzyme.bs.js";
+import * as Enzyme from "../src/Enzyme.bs.js";
 import * as Enzyme$1 from "enzyme";
 import EnzymeAdapterReact from "@wojtekmaj/enzyme-adapter-react-17";
 

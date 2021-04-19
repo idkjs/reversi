@@ -2,7 +2,7 @@ open Jest;
 open Enzyme;
 open Expect;
 
-let _ = Enzyme.configureEnzyme(react_17_adapter());
+configureEnzyme(react_17_adapter())|>ignore;
 
 describe("Player", () => {
     describe("bullet", () => {
@@ -22,21 +22,21 @@ describe("Player", () => {
             let player = Player.{ name: "John", color: Cell.Black };
             let wrapper = shallow(<Player player current=false />);
 
-            expect(wrapper |> Renderer.find(".player") |> Renderer.text) |> toEqual("John " ++ {js|•|js});
+            expect(wrapper |> Enzyme.Shallow.find(".player") |> Enzyme.Shallow.text) |> toEqual("John " ++ {js|•|js});
         });
 
         test("should render current as className if current", () => {
             let player = Player.{ name: "John", color: Cell.Black };
             let wrapper = shallow(<Player player current=true />);
 
-            expect(wrapper |> Renderer.find(".player.current") |> Renderer.length) |> toBe(1);
+            expect(wrapper |> Enzyme.Shallow.find(".player.current") |> Enzyme.Shallow.length) |> toBe(1);
         });
 
         test("should not render current as className if not current", () => {
             let player = Player.{ name: "John", color: Cell.Black };
             let wrapper = shallow(<Player player current=false />);
 
-            expect(wrapper |> Renderer.find(".player.current") |> Renderer.length) |> toBe(0);
+            expect(wrapper |> Enzyme.Shallow.find(".player.current") |> Enzyme.Shallow.length) |> toBe(0);
         });
     });
 });

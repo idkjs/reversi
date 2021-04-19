@@ -4,9 +4,7 @@ import * as Game from "../src/Game.bs.js";
 import * as Jest from "@glennsl/bs-jest/src/jest.bs.js";
 import * as $$Array from "bs-platform/lib/es6/array.js";
 import * as Board from "../src/Board.bs.js";
-import * as React from "react";
-import * as Enzyme from "bs-enzyme/src/Enzyme.bs.js";
-import * as Enzyme$1 from "enzyme";
+import * as Enzyme from "../src/Enzyme.bs.js";
 import EnzymeAdapterReact from "@wojtekmaj/enzyme-adapter-react-17";
 
 Enzyme.configureEnzyme(new EnzymeAdapterReact());
@@ -38,13 +36,15 @@ var fakeGame = Game.init([
       }
     ]);
 
-Jest.describe("Game", (function (param) {
-        Jest.describe("currentPlayer", (function (param) {
-                return Jest.test("should return current player for game", (function (param) {
-                              return Jest.Expect.toEqual({
-                                          name: "foo",
-                                          color: /* Black */1
-                                        }, Jest.Expect.expect(Game.currentPlayer(fakeGame)));
+Jest.describe("Full DOM rendering", (function (param) {
+        Jest.describe("Game", (function (param) {
+                return Jest.describe("currentPlayer", (function (param) {
+                              return Jest.test("should return current player for game", (function (param) {
+                                            return Jest.Expect.toEqual({
+                                                        name: "foo",
+                                                        color: /* Black */1
+                                                      }, Jest.Expect.expect(Game.currentPlayer(fakeGame)));
+                                          }));
                             }));
               }));
         Jest.describe("playerCanPlay", (function (param) {
@@ -125,75 +125,27 @@ Jest.describe("Game", (function (param) {
                                             }));
                             }));
               }));
-        Jest.describe("applyCellClick", (function (param) {
-                Jest.test("should return finished game if last cell change", (function (param) {
-                        var init = Board.init(3, 3);
-                        var game_board = {
-                          width: init.width,
-                          height: init.height,
-                          cells: matrixToCells([
-                                [
-                                  w,
-                                  w,
-                                  w
-                                ],
-                                [
-                                  undefined,
-                                  w,
-                                  b
-                                ],
-                                [
-                                  w,
-                                  w,
-                                  w
-                                ]
-                              ])
-                        };
-                        var game_players = fakeGame.players;
-                        var game_playerIndex = fakeGame.playerIndex;
-                        var game_finished = fakeGame.finished;
-                        var game = {
-                          board: game_board,
-                          players: game_players,
-                          playerIndex: game_playerIndex,
-                          finished: game_finished
-                        };
-                        return Jest.Expect.toEqual({
-                                    board: game_board,
-                                    players: game_players,
-                                    playerIndex: game_playerIndex,
-                                    finished: true
-                                  }, Jest.Expect.expect(Game.applyCellClick(game, 0, 1)));
-                      }));
-                return Jest.test("should return game with switched player instead", (function (param) {
-                              var init = Board.init(4, 4);
+        return Jest.describe("applyCellClick", (function (param) {
+                      Jest.test("should return finished game if last cell change", (function (param) {
+                              var init = Board.init(3, 3);
                               var game_board = {
                                 width: init.width,
                                 height: init.height,
                                 cells: matrixToCells([
                                       [
-                                        undefined,
-                                        undefined,
-                                        undefined,
-                                        undefined
-                                      ],
-                                      [
-                                        undefined,
-                                        b,
                                         w,
-                                        undefined
+                                        w,
+                                        w
                                       ],
                                       [
                                         undefined,
                                         w,
-                                        b,
-                                        undefined
+                                        b
                                       ],
                                       [
-                                        undefined,
-                                        undefined,
-                                        undefined,
-                                        undefined
+                                        w,
+                                        w,
+                                        w
                                       ]
                                     ])
                               };
@@ -206,32 +158,55 @@ Jest.describe("Game", (function (param) {
                                 playerIndex: game_playerIndex,
                                 finished: game_finished
                               };
-                              return Jest.Expect.toEqual(1, Jest.Expect.expect(Game.applyCellClick(game, 1, 3).playerIndex));
+                              return Jest.Expect.toEqual({
+                                          board: game_board,
+                                          players: game_players,
+                                          playerIndex: game_playerIndex,
+                                          finished: true
+                                        }, Jest.Expect.expect(Game.applyCellClick(game, 0, 1)));
                             }));
-              }));
-        return Jest.describe("<Game />", (function (param) {
-                      Jest.test("should render a <Board />", (function (param) {
-                              var wrapper = Enzyme$1.shallow(React.createElement(Game.make, {
-                                        game: fakeGame
-                                      }));
-                              return Jest.Expect.toBe(1, Jest.Expect.expect(wrapper.find("Board").length));
-                            }));
-                      Jest.test("should render <Player(s) />", (function (param) {
-                              var wrapper = Enzyme$1.shallow(React.createElement(Game.make, {
-                                        game: fakeGame
-                                      }));
-                              return Jest.Expect.toBe(2, Jest.Expect.expect(wrapper.find("Player").length));
-                            }));
-                      return Jest.test("should render 'finished' block if game is finished", (function (param) {
-                                    var wrapper = Enzyme$1.shallow(React.createElement(Game.make, {
-                                              game: {
-                                                board: fakeGame.board,
-                                                players: fakeGame.players,
-                                                playerIndex: fakeGame.playerIndex,
-                                                finished: true
-                                              }
-                                            }));
-                                    return Jest.Expect.toBe(1, Jest.Expect.expect(wrapper.find(".finished").length));
+                      return Jest.test("should return game with switched player instead", (function (param) {
+                                    var init = Board.init(4, 4);
+                                    var game_board = {
+                                      width: init.width,
+                                      height: init.height,
+                                      cells: matrixToCells([
+                                            [
+                                              undefined,
+                                              undefined,
+                                              undefined,
+                                              undefined
+                                            ],
+                                            [
+                                              undefined,
+                                              b,
+                                              w,
+                                              undefined
+                                            ],
+                                            [
+                                              undefined,
+                                              w,
+                                              b,
+                                              undefined
+                                            ],
+                                            [
+                                              undefined,
+                                              undefined,
+                                              undefined,
+                                              undefined
+                                            ]
+                                          ])
+                                    };
+                                    var game_players = fakeGame.players;
+                                    var game_playerIndex = fakeGame.playerIndex;
+                                    var game_finished = fakeGame.finished;
+                                    var game = {
+                                      board: game_board,
+                                      players: game_players,
+                                      playerIndex: game_playerIndex,
+                                      finished: game_finished
+                                    };
+                                    return Jest.Expect.toEqual(1, Jest.Expect.expect(Game.applyCellClick(game, 1, 3).playerIndex));
                                   }));
                     }));
       }));

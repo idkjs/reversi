@@ -2,7 +2,7 @@ open Jest;
 open Enzyme;
 open Expect;
 
-let _ = Enzyme.configureEnzyme(react_17_adapter());
+configureEnzyme(react_17_adapter())|>ignore;
 
 describe("<Cell />", () => {
     test("should render a disk with the right identifier", () => {
@@ -14,7 +14,7 @@ describe("<Cell />", () => {
                 />
             );
 
-            expect(wrapper |> Renderer.find(expectedClass) |> Renderer.length) |> toBe(1);
+            expect(wrapper |> Enzyme.Shallow.find(expectedClass) |> Enzyme.Shallow.length) |> toBe(1);
         };
 
         test(Some(Cell.Black), ".cell.black")|>ignore;

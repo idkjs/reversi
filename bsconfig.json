@@ -8,7 +8,7 @@
       "type": "dev"
     }
   ],
-  "bs-dependencies": [ "reason-react" ,"bs-enzyme"],
+  "bs-dependencies": [ "reason-react"],
   "bs-dev-dependencies": [ "@glennsl/bs-jest" ],
   "reason": {
     "react-jsx": 3
