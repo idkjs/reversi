@@ -1,0 +1,67 @@
+{
+  "name": "reversi",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "reason-react": "^0.9.1",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "watch": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "start": "react-scripts start",
+    "build": "bsb -make-world;react-scripts build",
+    "postinstall": "patch-package",
+    "test": "react-scripts test",
+    "refmt": "find src -name '*.re*' | xargs node_modules/bs-platform/bsrefmt --in-place",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.js"
+        ],
+        "rules": {
+          "default-case": "off",
+          "no-throw-literal": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@glennsl/bs-jest": "^0.7.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
+    "bs-enzyme": "^0.6.1",
+    "bs-platform": "^9.0.2",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(bs-platform|reason-react|@glennsl/bs-jest)/)"
+    ]
+  }
+}

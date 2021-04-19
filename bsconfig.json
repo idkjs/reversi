@@ -1,0 +1,25 @@
+{
+  "name": "reversi",
+  "sources": [
+    "src",
+    {
+      "dir": "__tests__",
+      "subdirs": true,
+      "type": "dev"
+    }
+  ],
+  "bs-dependencies": [ "reason-react" ,"bs-enzyme"],
+  "bs-dev-dependencies": [ "@glennsl/bs-jest" ],
+  "reason": {
+    "react-jsx": 3
+  },
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "bsc-flags": [ "-bs-super-errors" ],
+  "warnings": {"number": "-6"}
+}
