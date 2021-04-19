@@ -6,7 +6,7 @@ import * as Jest from "@glennsl/bs-jest/src/jest.bs.js";
 import * as React from "react";
 import * as Enzyme from "bs-enzyme/src/Enzyme.bs.js";
 import * as Enzyme$1 from "enzyme";
-import * as EnzymeAdapterReact from "@wojtekmaj/enzyme-adapter-react-17";
+import EnzymeAdapterReact from "@wojtekmaj/enzyme-adapter-react-17";
 
 Enzyme.configureEnzyme(new EnzymeAdapterReact());
 

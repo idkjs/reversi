@@ -6,7 +6,7 @@ import * as Board from "../src/Board.bs.js";
 import * as React from "react";
 import * as Enzyme from "bs-enzyme/src/Enzyme.bs.js";
 import * as Enzyme$1 from "enzyme";
-import * as EnzymeAdapterReact from "@wojtekmaj/enzyme-adapter-react-17";
+import EnzymeAdapterReact from "@wojtekmaj/enzyme-adapter-react-17";
 
 function matrixToCells(matrix) {
   return Board.sortCells($$Array.to_list($$Array.fold_left($$Array.append, [], $$Array.mapi((function (y, row) {

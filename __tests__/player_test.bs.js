@@ -5,7 +5,7 @@ import * as React from "react";
 import * as Enzyme from "bs-enzyme/src/Enzyme.bs.js";
 import * as Player from "../src/Player.bs.js";
 import * as Enzyme$1 from "enzyme";
-import * as EnzymeAdapterReact from "@wojtekmaj/enzyme-adapter-react-17";
+import EnzymeAdapterReact from "@wojtekmaj/enzyme-adapter-react-17";
 
 Enzyme.configureEnzyme(new EnzymeAdapterReact());
 
